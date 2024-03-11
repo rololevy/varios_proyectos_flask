@@ -1,6 +1,8 @@
 from flask import Flask, request, make_response, redirect, render_template
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
+bootstrap = Bootstrap(app)
 
 
 @app.route("/index")
@@ -17,6 +19,11 @@ items = [
     "ITEM 3",
     "ITEM 4",
 ]
+
+
+@app.errorhandler(404)
+def not_found_endpoint(error):
+    return render_template("404.html", error=error)
 
 
 @app.route("/show_information_address")

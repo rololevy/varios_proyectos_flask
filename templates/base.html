@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} Flask Application Web | {% endblock %}</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
-</head>
-<body>
-    <header>
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+    {{super()}}
+
+    <title>
+        {% block title %} Flask Application Web | {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/tyles.css')}}">
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
         {%include 'navbar.html' %}
-
-    </header>
-
-
+    {% endblock %}
+    
         {% block content %}
         {% endblock %}
-</body>
-</html>
+{% endblock %}
