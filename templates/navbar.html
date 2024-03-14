@@ -1,8 +1,25 @@
-<nav>
-
+<!--
+    
     <ul>
         <img src=" {{url_for('static', filename='images/FlaskPython.jpg')}}" alt="">
         <li> <a href="{{url_for('index')}}"> Boton Inicio</a></li>
         <li><a href="https://google.com">Ir a Goolgle</a></li>
     </ul>
 </nav>
+--> 
+
+
+<ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{{url_for('index')}}"> Boton Inicio</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://google.com">Ir a Goolgle</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+    </li>
+</ul>
